@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelExplore - Découvrez le monde</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">TravelExplore</div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Accueil</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="#">À propos</a>
+            <a href="#">Contact</a>
+            <a href="auth.html" id="authLink">Connexion</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Explorez le Monde</h1>
+            <p>Découvrez des destinations extraordinaires et créez des souvenirs inoubliables</p>
+            <div class="search-container">
+                <form class="search-form" onsubmit="handleSearch(event)">
+                    <div class="search-main">
+                        <div class="search-input-container">
+                            <input type="text" id="searchInput" placeholder="Où souhaitez-vous aller ?">
+                            <div id="autocomplete" class="autocomplete-container"></div>
+                        </div>
+                        <button type="submit" class="search-button">Rechercher</button>
+                    </div>
+                    <div class="search-filters">
+                        <select class="filter-select">
+                            <option value="">Budget</option>
+                            <option value="economique">Économique</option>
+                            <option value="modere">Modéré</option>
+                            <option value="luxe">Luxe</option>
+                        </select>
+                        <select class="filter-select">
+                            <option value="">Durée</option>
+                            <option value="weekend">Week-end</option>
+                            <option value="semaine">1 semaine</option>
+                            <option value="quinzaine">2 semaines</option>
+                        </select>
+                        <select class="filter-select">
+                            <option value="">Type de voyage</option>
+                            <option value="culture">Culture</option>
+                            <option value="detente">Détente</option>
+                            <option value="aventure">Aventure</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="destinations">
+        <div class="section-title">
+            <h2>Destinations Populaires</h2>
+            <p>Découvrez nos meilleures destinations</p>
+        </div>
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <div class="destination-image"></div>
+                <div class="destination-info">
+                    <h3>Paris, France</h3>
+                    <p>La ville de l'amour et de la lumière</p>
+                </div>
+            </div>
+            <div class="destination-card">
+                <div class="destination-image"></div>
+                <div class="destination-info">
+                    <h3>Tokyo, Japon</h3>
+                    <p>Une métropole unique entre tradition et modernité</p>
+                </div>
+            </div>
+            <div class="destination-card">
+                <div class="destination-image"></div>
+                <div class="destination-info">
+                    <h3>Bali, Indonésie</h3>
+                    <p>Le paradis tropical par excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-title">
+            <h2>Pourquoi Nous Choisir</h2>
+            <p>Des fonctionnalités uniques pour votre voyage</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌟</div>
+                <h3>Destinations Exclusives</h3>
+                <p>Des lieux uniques sélectionnés pour vous</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h3>Planification Facile</h3>
+                <p>Organisez votre voyage en quelques clics</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Communauté Active</h3>
+                <p>Partagez vos expériences avec d'autres voyageurs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À Propos</h3>
+                <ul>
+                    <li><a href="#">Notre Histoire</a></li>
+                    <li><a href="#">Équipe</a></li>
+                    <li><a href="#">Carrières</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Destinations</h3>
+                <ul>
+                    <li><a href="#">Europe</a></li>
+                    <li><a href="#">Asie</a></li>
+                    <li><a href="#">Amériques</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TravelExplore. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* Styles pour la carte */
+.map-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 20px 40px;
+    gap: 20px;
+    height: 70vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Pour s'assurer que la carte apparaît sous le header */
+.page-header {
+    z-index: 10;
+    position: relative;
+    background-color: white;
+}
+
+.map-sidebar {
+    flex: 0 0 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.map-sidebar h2 {
+    margin-top: 0;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.map-search {
+    margin-bottom: 20px;
+}
+
+.map-search input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.map-search input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.destinations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.destination-item {
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+    font-weight: 500;
+}
+
+.destination-item:hover {
+    background-color: #e9ecef;
+    border-left-color: #3498db;
+}
+
+.destination-item.active {
+    background-color: #e3f2fd;
+    border-left-color: #3498db;
+    color: #3498db;
+    font-weight: 600;
+}
+
+.map {
+    flex: 1;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 5;
+}
+
+/* Style des popups de la carte */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.map-popup h3 {
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+}
+
+.map-popup p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.popup-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.popup-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .map-container {
+        flex-direction: column;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .map-sidebar {
+        flex: auto;
+        width: 100%;
+        margin-bottom: 20px;
+        max-height: 300px;
+    }
+
+    .map {
+        height: 400px;
+    }
+}

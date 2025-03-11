@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelExplore - Carte des Destinations</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">TravelExplore</div>
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="map.html" class="active">Carte</a>
+                <a href="#">À propos</a>
+                <a href="#">Contact</a>
+                <a href="auth.html" id="authLink">Connexion</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Carte Interactive des Destinations</h1>
+            <p>Explorez visuellement nos destinations à travers le monde</p>
+        </div>
+    </header>
+
+    <main class="map-container">
+        <div class="map-sidebar">
+            <h2>Destinations</h2>
+            <div class="map-search">
+                <input type="text" id="mapSearch" placeholder="Rechercher une destination...">
+            </div>
+            <div id="destinationsList" class="destinations-list">
+                <!-- Liste des destinations ajoutée dynamiquement -->
+            </div>
+        </div>
+        <div id="map" class="map"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À Propos</h3>
+                <ul>
+                    <li><a href="#">Notre Histoire</a></li>
+                    <li><a href="#">Équipe</a></li>
+                    <li><a href="#">Carrières</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Destinations</h3>
+                <ul>
+                    <li><a href="#">Europe</a></li>
+                    <li><a href="#">Asie</a></li>
+                    <li><a href="#">Amériques</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TravelExplore. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="scripts/map.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

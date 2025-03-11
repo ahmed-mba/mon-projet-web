@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelExplore - Gestion des Destinations</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/destinations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">TravelExplore</div>
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="destinations.html" class="active">Destinations</a>
+                <a href="#">À propos</a>
+                <a href="#">Contact</a>
+                <a href="auth.html" id="authLink">Connexion</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Gestion des Destinations</h1>
+            <p>Ajoutez, modifiez ou supprimez des destinations</p>
+        </div>
+    </header>
+
+    <main class="destinations-management">
+        <div class="search-section">
+            <!-- Recherche simple -->
+            <div class="search-container">
+                <input type="text" id="destinationSearch" placeholder="Rechercher une destination..." class="search-input">
+                <button id="toggleAdvanced" class="secondary-button">
+                    Recherche avancée <span class="toggle-icon">▼</span>
+                </button>
+            </div>
+            
+            <!-- Panneau de recherche avancée (caché par défaut) -->
+            <div id="advancedSearch" class="advanced-search" style="display: none;">
+                <div class="filter-group">
+                    <h3>Prix</h3>
+                    <div class="price-range">
+                        <input type="number" id="minPrice" placeholder="Min" min="0">
+                        <span>à</span>
+                        <input type="number" id="maxPrice" placeholder="Max" min="0">
+                        <span>€</span>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Catégories</h3>
+                    <div class="categories-group">
+                        <label><input type="checkbox" name="category" value="City Break"> City Break</label>
+                        <label><input type="checkbox" name="category" value="Plage"> Plage</label>
+                        <label><input type="checkbox" name="category" value="Montagne"> Montagne</label>
+                        <label><input type="checkbox" name="category" value="Culture"> Culture</label>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Tri</h3>
+                    <select id="sortBy" class="sort-select">
+                        <option value="">Trier par...</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                        <option value="name-asc">A-Z</option>
+                        <option value="name-desc">Z-A</option>
+                    </select>
+                </div>
+                
+                <div class="filter-actions">
+                    <button id="applyFilters" class="primary-button">Appliquer les filtres</button>
+                    <button id="resetFilters" class="secondary-button">Réinitialiser</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-destination">
+            <button id="addDestinationBtn" class="primary-button">Ajouter une Destination</button>
+        </div>
+
+        <div class="destinations-grid" id="destinationsGrid">
+        </div>
+
+        <div id="destinationModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Ajouter une Destination</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <form id="destinationForm" class="destination-form">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Pays</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="price">Prix</label>
+                        <input type="number" id="price" name="price" step="0.01" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="image_url">URL de l'image</label>
+                        <input type="url" id="image_url" name="image_url" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Catégorie</label>
+                        <select id="category" name="category" required>
+                            <option value="">Sélectionnez une catégorie</option>
+                            <option value="City Break">City Break</option>
+                            <option value="Plage">Plage</option>
+                            <option value="Montagne">Montagne</option>
+                            <option value="Culture">Culture</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À Propos</h3>
+                <ul>
+                    <li><a href="#">Notre Histoire</a></li>
+                    <li><a href="#">Équipe</a></li>
+                    <li><a href="#">Carrières</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Destinations</h3>
+                <ul>
+                    <li><a href="#">Europe</a></li>
+                    <li><a href="#">Asie</a></li>
+                    <li><a href="#">Amériques</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TravelExplore. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/destinations.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>
